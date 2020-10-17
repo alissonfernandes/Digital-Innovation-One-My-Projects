@@ -20,10 +20,9 @@ header .container{
 }
 
 header .logo{
-	color: var(--vermelho);
-	font-family: "Arial Black";
-	font-size: 40px;
 	margin: 5px;
+	width: 180px;
+	margin: 6px;
 }
 
 header nav a{
@@ -44,6 +43,8 @@ div.filme-principal{
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
+
+	background-position: center-top;
 }
 
 .filme-principal .descricao{
