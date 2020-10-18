@@ -20,7 +20,6 @@ header .container{
 }
 
 header .logo{
-	margin: 5px;
 	width: 180px;
 	margin: 6px;
 }
@@ -30,6 +29,11 @@ header nav a{
 	color: #AAA;
 	margin-right: 10px;
 }
+
+header i#bars{
+	display: none;
+}
+
 header nav a:hover{
 	color: #fff;
 }
