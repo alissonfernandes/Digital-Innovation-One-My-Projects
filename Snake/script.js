@@ -10,8 +10,32 @@ snake[0] = {
     y: 8*box
 }
 
-criarBG();
-criarCobrinha();
+//Intervalo de tempo para iniciar jogo
+let jogo = setInterval(iniciarJogo, 100);
+
+//Direção da cobrinha(right, left, up, down)
+let direction  = "right";
+
+function iniciarJogo(){
+    criarBG();
+    criarCobrinha();
+
+    let snakex = snake[0].x;
+    let snakey = snake[0].y;
+
+    if(direction == 'right') snakex += box;
+    if(direction == 'left') snakex -+ box;
+    if(direction == 'up') snakey -= box;
+    if(direction == 'down') snakey += box;
+
+    let newhad = {
+        x: snakex,
+        y: snakey
+    }
+
+    snake.pop();
+    snake.unshift(newhad);
+}
 
 /** Criar background */
 function criarBG(){
