@@ -16,6 +16,12 @@ let jogo = setInterval(iniciarJogo, 100);
 //Direção da cobrinha(right, left, up, down)
 let direction  = "right";
 
+//food
+let food = {
+    x: Math.floor(Math.random()*15+1) * box,
+    y: Math.floor(Math.random()*15+1) * box
+}
+
 function iniciarJogo(){
     if(snake[0].x > 15*box && direction == 'right') snake[0].x = 0;
     if(snake[0].x < 0 && direction == 'left') snake[0].x = 16*box;
@@ -24,6 +30,7 @@ function iniciarJogo(){
 
     criarBG();
     criarCobrinha();
+    drawFood();
 
     let snakex = snake[0].x;
     let snakey = snake[0].y;
@@ -65,4 +72,10 @@ function update(event){
     if(event.keyCode == 38 && direction != 'down') direction = 'up';
     if(event.keyCode == 39 && direction != 'left') direction = 'right';
     if(event.keyCode == 40 && direction != 'up') direction = 'down';
+}
+
+//Criar comidinha
+function drawFood(){
+    context.fillStyle = 'red';
+    context.fillRect(food.x, food.y, box, box);
 }
