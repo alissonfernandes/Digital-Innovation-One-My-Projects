@@ -40,12 +40,20 @@ function iniciarJogo(){
     if(direction == 'up') snakey -= box;
     if(direction == 'down') snakey += box;
 
+    
+
+    if(snake.x != food.x || snake.y != food.y){
+        snake.pop()
+    } else{
+        food.x = Math.floor(Math.random()*15+1)*box;
+        food.y = Math.floor(Math.random()*15+1)*box;
+    }
+
     let newhad = {
         x: snakex,
         y: snakey
     }
 
-    snake.pop();
     snake.unshift(newhad);
 }
 
